@@ -19,7 +19,7 @@ How to use?
 ![Demonstration](assets/example.gif)
 -----------------
 
-**BE AWARE THAT YOU MUST TO DOWNLOAD THE [**CLOTH-CONFIG**](https://modrinth.com/mod/cloth-config) LIBRARY IN ORDER TO THE MOD TO WORK!**
+**BE AWARE THAT YOU MUST TO DOWNLOAD [**CLOTH-CONFIG**](https://modrinth.com/mod/cloth-config) IN ORDER TO THE MOD TO WORK!**
 
 ------------------
 **tysm for using this mod** 🙏
