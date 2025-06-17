@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "hit-color",
+  "version": "${version}",
+  "name": "Hit Color",
+  "description": "A cool mod that changes the color of entities when they're hit!",
+  "authors": [
+    "I-No-oNe"
+  ],
+  "contact": {
+    "homepage": "https://github.com/I-No-oNe/",
+    "sources": "https://github.com/I-No-oNe/Hit-Color"
+  },
+  "license": "MIT",
+  "icon": "assets/hit-color/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.i_no_am.hit.color.HitColor"
+    ]
+  },
+  "mixins": [
+    "hit-color.mixins.json"
+  ],
+  "depends": {
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=${minecraft_version}",
+    "midnightlib": ">=${midnightlib_version}"
+  }
+}

@@ -1,0 +1,11 @@
+{
+	"required": true,
+	"package": "net.i_no_am.hit.color.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+      "MixinOverlayTexture"
+	],
+	"injectors": {
+		"defaultRequire": 1
+	}
+}
