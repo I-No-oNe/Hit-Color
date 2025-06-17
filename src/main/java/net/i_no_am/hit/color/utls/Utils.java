@@ -1,7 +1,7 @@
 package net.i_no_am.hit.color.utls;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.i_no_am.hit.color.config.Config;
+import net.i_no_am.hit.color.config.ModConfig;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.NativeImageBackedTexture;
 import net.minecraft.util.math.ColorHelper;
@@ -13,7 +13,7 @@ public class Utils {
     public static void applyOverlayColor(NativeImageBackedTexture originalTexture) {
         NativeImage nativeImage = originalTexture.getImage();
         if (nativeImage == null) return;
-        Color color = Config.getColor();
+        Color color = ModConfig.getColor();
 
         for (int i = 0; i < 16; i++) {
             for (int j = 0; j < 16; j++) {

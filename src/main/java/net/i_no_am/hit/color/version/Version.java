@@ -3,6 +3,7 @@ package net.i_no_am.hit.color.version;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.fabricmc.loader.api.FabricLoader;
+import net.i_no_am.hit.color.Global;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.text.Text;
@@ -18,11 +19,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Supplier;
 
-public class Version {
+public class Version implements Global {
 
     private static final Map<String, Double> versionCache = new HashMap<>();
     private static boolean hasPrompted = false;
-    private final MinecraftClient mc;
     private final String name;
     private final String modId;
     private final String apiUrl;
@@ -31,7 +31,6 @@ public class Version {
     private final Supplier<Boolean> condition;
 
     private Version(Builder builder) {
-        this.mc = MinecraftClient.getInstance();
         this.name = builder.name;
         this.modId = builder.modId;
         this.apiUrl = "https://api.github.com/repos/%s/%s/releases/latest".formatted(builder.gitUsername,builder.modId);
@@ -170,7 +169,6 @@ public class Version {
         }
         return 0;
     }
-
 
     public static Builder builder() {
         return new Builder();

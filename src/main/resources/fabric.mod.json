@@ -15,8 +15,11 @@
   "icon": "assets/hit-color/icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [
+    "client": [
       "net.i_no_am.hit.color.HitColor"
+    ],
+    "modmenu": [
+      "net.i_no_am.hit.color.config.ModMenuIntegration"
     ]
   },
   "mixins": [
@@ -27,6 +30,6 @@
     "fabric-api": "*",
     "fabricloader": ">=${loader_version}",
     "minecraft": ">=${minecraft_version}",
-    "midnightlib": ">=${midnightlib_version}"
+    "cloth-config": ">=${cloth_version}"
   }
 }

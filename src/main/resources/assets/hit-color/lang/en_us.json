@@ -1,3 +1,9 @@
 {
-  "hit-color.midnightconfig.title":"Hit Color Settings"
+  "hit-color.i_no_am.menu": "Hit Color Menu",
+  "hit-color.i_no_am.category": "Hit Color",
+  "text.autoconfig.hit-color.title": "Hit Color Settings",
+  "text.autoconfig.hit-color.option.isEnabled": "Enable The Mod",
+  "text.autoconfig.hit-color.option.color": "Color of a hit",
+  "text.autoconfig.hit-color.option.alpha": "Transparency Level",
+  "text.autoconfig.hit-color.option.rainbow": "Rainbow Mode"
 }
