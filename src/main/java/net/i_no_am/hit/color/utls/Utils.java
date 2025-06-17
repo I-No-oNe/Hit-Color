@@ -1,7 +1,6 @@
 package net.i_no_am.hit.color.utls;
 
 import com.mojang.blaze3d.systems.RenderSystem;
-import net.i_no_am.hit.color.Global;
 import net.i_no_am.hit.color.config.Config;
 import net.minecraft.client.texture.NativeImage;
 import net.minecraft.client.texture.NativeImageBackedTexture;
@@ -9,7 +8,7 @@ import net.minecraft.util.math.ColorHelper;
 
 import java.awt.*;
 
-public class Utils implements Global {
+public class Utils {
 
     public static void applyOverlayColor(NativeImageBackedTexture originalTexture) {
         NativeImage nativeImage = originalTexture.getImage();
