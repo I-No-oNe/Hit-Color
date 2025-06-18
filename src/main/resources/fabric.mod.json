@@ -12,7 +12,7 @@
     "sources": "https://github.com/I-No-oNe/Hit-Color"
   },
   "license": "MIT",
-  "icon": "assets/hit-color/icon.png",
+  "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
     "client": [

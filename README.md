@@ -17,6 +17,8 @@ How to use?
 --------------------
 ### In Game Example (with rainbow mode enabled):
 ![Demonstration](assets/example.gif)
+### Another Example:
+![Another Example](assets/example1.png)
 -----------------
 
 **BE AWARE THAT YOU MUST TO DOWNLOAD [**CLOTH-CONFIG**](https://modrinth.com/mod/cloth-config) IN ORDER TO THE MOD TO WORK!**
