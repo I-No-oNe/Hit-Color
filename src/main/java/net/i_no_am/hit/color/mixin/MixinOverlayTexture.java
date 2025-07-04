@@ -1,5 +1,6 @@
 package net.i_no_am.hit.color.mixin;
 
+import net.i_no_am.hit.color.HitColor;
 import net.i_no_am.hit.color.accessor.OverlayTextureAccessor;
 import net.i_no_am.hit.color.utls.Utils;
 import net.minecraft.client.render.OverlayTexture;
@@ -16,12 +17,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MixinOverlayTexture implements OverlayTextureAccessor {
 
 	@Shadow @Final private NativeImageBackedTexture texture;
-
-	@Inject(method = "<init>", at = @At("TAIL"))
-	private void atInit(CallbackInfo ci) {
-		Utils.applyOverlayColor(this.texture);
-		Utils.resetOverlayColor(this.texture);
-	}
 
 	@Override
 	public NativeImageBackedTexture hitColor$getTexture() {
