@@ -1,4 +1,4 @@
-package net.i_no_am.hit.color.utls;
+package net.i_no_am.hit.color.utils;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.i_no_am.hit.color.config.ModConfig;
@@ -23,7 +23,7 @@ public class Utils {
                     int alpha = (int) ((1.0F - (float) j / 15.0F * 0.75F) * 255.0F);
                     nativeImage.setColorArgb(j, i, ColorHelper.withAlpha(alpha, -1));
                 }
-                RenderSystem.setupOverlayColor(originalTexture.getGlTexture());
+                RenderSystem.setupOverlayColor(originalTexture.getGlTextureView());
             }
         }
 
@@ -46,7 +46,7 @@ public class Utils {
             }
         }
         uploadTexture(originalTexture);
-        RenderSystem.setupOverlayColor(originalTexture.getGlTexture());
+        RenderSystem.setupOverlayColor(originalTexture.getGlTextureView());
     }
 
     private static void uploadTexture(NativeImageBackedTexture texture) {

@@ -4,7 +4,6 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.fabricmc.loader.api.FabricLoader;
 import net.i_no_am.hit.color.Global;
-import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.ConfirmScreen;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -22,7 +21,7 @@ import java.util.function.Supplier;
 public class Version implements Global {
 
     private static final Map<String, Double> versionCache = new HashMap<>();
-    private static boolean hasPrompted = false;
+    private static boolean hadPrompted = false;
     private final String name;
     private final String modId;
     private final String apiUrl;
@@ -33,7 +32,7 @@ public class Version implements Global {
     private Version(Builder builder) {
         this.name = builder.name;
         this.modId = builder.modId;
-        this.apiUrl = "https://api.github.com/repos/%s/%s/releases/latest".formatted(builder.gitUsername,builder.modId);
+        this.apiUrl = "https://api.github.com/repos/%s/%s/releases/latest".formatted(builder.gitUsername, builder.modId);
         this.downloadUrl = builder.downloadSource;
         this.printVersions = builder.printVersions;
         this.condition = builder.condition;
@@ -41,7 +40,7 @@ public class Version implements Global {
 
     public static class Builder {
 
-        private Builder(){}
+        private Builder() {}
 
         private String name;
         private String modId;
@@ -55,7 +54,7 @@ public class Version implements Global {
             return this;
         }
 
-        public Builder modId(String modId){
+        public Builder modId(String modId) {
             this.modId = modId;
             return this;
         }
@@ -86,17 +85,16 @@ public class Version implements Global {
     }
 
     public void notifyUpdates() {
-        if (!shouldCheck()) return;
+        if (!shouldCheck() || hadPrompted) return;
         try {
             double localVersion = getLocalVersion();
             double remoteVersion = getRemoteVersion();
 
-            if (printVersions) {
+            if (printVersions)
                 System.out.println("[Hit-Color] Version Check:\nLocal: " + localVersion + "\nRemote: " + remoteVersion);
-            }
 
-            if (localVersion < remoteVersion && mc.player != null && mc.currentScreen == null && !hasPrompted) {
-                hasPrompted = true;
+            if (localVersion < remoteVersion && mc.player != null && mc.currentScreen == null) {
+                hadPrompted = true;
 
                 mc.setScreen(new ConfirmScreen(confirmed -> {
                     if (confirmed) {
@@ -110,6 +108,7 @@ public class Version implements Global {
 
         } catch (Exception e) {
             System.out.println("[Hit-Color] Version check failed: " + e.getMessage());
+            hadPrompted = true;
         }
     }
 
