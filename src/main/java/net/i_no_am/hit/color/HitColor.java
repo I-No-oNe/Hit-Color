@@ -26,7 +26,7 @@ public class HitColor implements ClientModInitializer, Global {
                         .modId(modId)
                         .gitUsername("I-No-oNe")
                         .downloadSource("https://modrinth.com/mod/no-ones-hit-color")
-                        .printVersions(true)
+                        .printVersions(false) // todo - fix print spamming
                         .condition(() -> config.shouldCheck)
                         .build()
                         .notifyUpdates());
