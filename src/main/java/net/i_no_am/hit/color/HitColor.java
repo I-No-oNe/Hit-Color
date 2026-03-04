@@ -1,6 +1,6 @@
 package net.i_no_am.hit.color;
 
-import me.shedaniel.autoconfig.AutoConfig;
+import me.shedaniel.autoconfig.AutoConfigClient;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
@@ -26,7 +26,7 @@ public class HitColor implements ClientModInitializer, Global {
                         .modId(modId)
                         .gitUsername("I-No-oNe")
                         .downloadSource("https://modrinth.com/mod/no-ones-hit-color")
-                        .printVersions(false) // todo - fix print spamming
+                        .printVersions(false)
                         .condition(() -> config.shouldCheck)
                         .build()
                         .notifyUpdates());
@@ -41,7 +41,7 @@ public class HitColor implements ClientModInitializer, Global {
             else Utils.resetOverlayColor(overlay);
 
             while (BIND.isPressed())
-                mc.setScreen(AutoConfig.getConfigScreen(ModConfig.class, mc.currentScreen).get());
+                mc.setScreen(AutoConfigClient.getConfigScreen(ModConfig.class, mc.currentScreen).get());
         });
     }
 

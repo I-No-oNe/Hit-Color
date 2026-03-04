@@ -40,7 +40,8 @@ public class Version implements Global {
 
     public static class Builder {
 
-        private Builder() {}
+        private Builder() {
+        }
 
         private String name;
         private String modId;
@@ -90,8 +91,12 @@ public class Version implements Global {
             double localVersion = getLocalVersion();
             double remoteVersion = getRemoteVersion();
 
-            if (printVersions)
+            boolean print = false;
+
+            if (printVersions && !print) {
                 System.out.println("[Hit-Color] Version Check:\nLocal: " + localVersion + "\nRemote: " + remoteVersion);
+                print = true;
+            }
 
             if (localVersion < remoteVersion && mc.player != null && mc.currentScreen == null) {
                 hadPrompted = true;
