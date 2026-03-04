@@ -18,7 +18,8 @@ jobs:
         uses: actions/setup-java@v4
         with:
           java-version: '24'
-          distribution: 'microsoft'
+          distribution: 'zulu'
+          java-package: 'jdk'
       - name: make gradle wrapper executable
         run: chmod +x ./gradlew
       - name: build
