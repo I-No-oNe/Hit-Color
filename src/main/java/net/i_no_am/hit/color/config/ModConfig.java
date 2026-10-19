@@ -22,6 +22,8 @@ public class ModConfig implements ConfigData, Global {
 
     public boolean rainbow = false;
 
+    public boolean tintArmor = false;
+
     @ConfigEntry.Gui.Excluded
     @Comment("Disable version check if it causes crashes")
     public boolean shouldCheck = true;

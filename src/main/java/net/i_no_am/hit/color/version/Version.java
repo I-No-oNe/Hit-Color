@@ -4,10 +4,10 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.fabricmc.loader.api.FabricLoader;
 import net.i_no_am.hit.color.Global;
-import net.minecraft.client.gui.screen.ConfirmScreen;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Util;
+import net.minecraft.client.gui.screens.ConfirmScreen;
+import net.minecraft.network.chat.Component;
+import net.minecraft.ChatFormatting;
+import com.mojang.blaze3d.Blaze3D;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -98,17 +98,17 @@ public class Version implements Global {
                 print = true;
             }
 
-            if (localVersion < remoteVersion && mc.player != null && mc.currentScreen == null) {
+            if (localVersion < remoteVersion && mc.player != null && mc.gui.screen() == null) {
                 hadPrompted = true;
 
-                mc.setScreen(new ConfirmScreen(confirmed -> {
+                mc.gui.setScreen(new ConfirmScreen(confirmed -> {
                     if (confirmed) {
-                        Util.getOperatingSystem().open(URI.create(downloadUrl));
+                        Blaze3D.openUri(URI.create(downloadUrl));
                     }
-                    mc.player.closeScreen();
-                }, Text.of(Formatting.RED + name + " is outdated!"),
-                        Text.of("Please download the latest version from " + Formatting.GREEN + "Modrinth"),
-                        Text.of("Download"), Text.of("Continue playing")));
+                    mc.player.closeContainer();
+                }, Component.literal(ChatFormatting.RED + name + " is outdated!"),
+                        Component.literal("Please download the latest version from " + ChatFormatting.GREEN + "Modrinth"),
+                        Component.literal("Download"), Component.literal("Continue playing")));
             }
 
         } catch (Exception e) {
