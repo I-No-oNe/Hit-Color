@@ -1,9 +1,11 @@
 {
 	"required": true,
 	"package": "net.i_no_am.hit.color.mixin",
-	"compatibilityLevel": "JAVA_21",
+	"compatibilityLevel": "JAVA_25",
 	"mixins": [
-      "MixinOverlayTexture"
+      "MixinOverlayTexture",
+      "MixinArmorRenderPipelines",
+      "MixinEquipmentRenderer"
 	],
 	"injectors": {
 		"defaultRequire": 1
